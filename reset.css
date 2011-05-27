@@ -1,0 +1,262 @@
+/*  
+    Youzee.com
+    
+    Title: Initial reset of the browser default styles
+    Author: Alberto Calvo
+    Version: 1.6.9.2
+    Sources:
+        ·Eric Meyer's reset v2.0 | 20110126
+        ·Richard Clark's reset v1.4.1 | 20100301
+        ·Anthony Short's Foundation CSS reset | 20100829
+*/
+
+/* @group Global */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    a, b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        word-wrap: break-word;
+    }
+    
+    body {
+        line-height: 1;
+        text-rendering: optimizeLegibility; /*Enabling kerning-pairs & ligatures*/
+    }
+/* @end */
+
+/* @group HTML5 elements */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section, summary {
+        display: block;
+    }
+    
+    
+    /* !Display not defined in IE6/7/8/9 & FF3 */
+    audio, canvas, video {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+    }
+/* @end */
+
+/* @group Images and objects */
+    /* !Nice image resizing on IE */
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+    
+    /* !Assuring we don't break the layout with fluid media */
+    img, video,
+    object, embed {
+        max-width: 100%;
+    }
+/* @end */
+
+/* @group Lists */
+    nav ul,
+    nav ol {
+        list-style: none;
+    }
+    
+    ul, ol {
+        list-style-position: outside;
+    }
+/* @end */
+
+/* @group Quotes */
+    blockquote, q {
+        quotes: none;
+    }
+    
+    blockquote:before, 
+    blockquote:after,
+    q:before, q:after {
+        content: "";
+        content: none;
+    }
+/* @end */
+
+/* @group Sup & Sub */
+    /* !Preserves line-height and selector appearance */
+    sup {
+        vertical-align: text-top;
+    }
+    
+    sub {
+        vertical-align: text-bottom;
+    }
+/* @end */
+
+/* @group Tables */
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    th,
+    thead,
+    table caption {
+        text-align: left;
+    }
+/* @end */
+
+/* @group Forms */
+    /* @group General */
+        input, select, button, textarea {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+        }
+        
+        label,
+        input, select, button, textarea {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: normal;
+            background: none;
+            line-height: 1;
+            font-family: inherit;
+            font-size: inherit;
+        }
+        
+        /* !All of our custom controls should be what we expect them to be */
+        input,
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        /* !These elements are usually rendered a certain way by the browser */
+        button,
+        input[type=reset],
+        input[type=button],
+        input[type=submit],
+        input[type=checkbox],
+        input[type=radio],
+        select {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        /* !Pointer cursor & Removing user selection on clickable input elements */
+        button,
+        label[for],
+        label > *,
+        input[type="button"],
+        input[type="submit"],
+        a[role="button"],
+        .exclusive-group > a {
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        meter {
+            border: 0; /*Removing Opera*/
+            -webkit-appearance: none; /*Allows styling for meter tags*/
+        }
+    /* @end */
+    
+    /* @group Buttons */
+        /* !Removes extra side padding in IE */
+        button,
+        input[type="reset"],
+        input[type="button"],
+        input[type="submit"] {
+            overflow: visible; 
+            width: auto;
+        }
+        
+        /* !Overrides extra padding in Firefox */
+        ::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        
+        /* !IE8 and FF freak out if this rule is within another selector */
+        /*::-webkit-file-upload-button {  
+            padding: 0;
+            border: 0;
+            background: none;
+        }*/
+    /* @end */
+        
+    /* @group Textareas */
+        textarea {
+            width: 100%;
+            vertical-align: top; /*Moves the label to the top*/
+            overflow: auto; /*Removes auto scrollbars in IE*/
+            resize: vertical; /*Removes horizontal resizing in WebKit and Gecko 2*/
+        }
+    /* @end */
+        
+    /* @group input[type="search"] for Webkit */
+        /* !Makes Webkit render the search input like a normal text field */
+        input[type=search] {
+            -webkit-appearance: textfield;
+        }
+        
+        /* !Turns off the recent search for Webkit. It adds about 15px padding on the left */
+        ::-webkit-search-decoration {
+            display: none;
+        }
+        
+        /* !Turns off the cancel search button for Webkit. */
+        ::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+        }
+    /* @end */
+    
+    /* @group Invalid */
+        /* !Handling invalid pseudo-classes applied by modern browsers */
+        :invalid,
+        :-moz-ui-invalid,
+        :-moz-submit-invalid {
+            box-shadow: none;
+        }
+    /* @end */
+/* @end */
+
+/* @group Misc */
+    ins {
+        text-decoration: none;
+    }
+    
+    abbr[title], dfn[title] {
+        cursor: help;
+    }
+    
+    del {
+        text-decoration: line-through;
+    }
+    
+    hr {
+        width: 100%;
+        height: 1px;
+        margin: 1em 0;
+        padding: 0;
+        border: 0;
+        background: #ddd;
+        display: none;
+    }
+/* @end */
