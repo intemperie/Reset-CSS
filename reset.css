@@ -144,11 +144,11 @@
         
         /* !These elements are usually rendered a certain way by the browser */
         button,
-        input[type=reset],
-        input[type=button],
-        input[type=submit],
-        input[type=checkbox],
-        input[type=radio],
+        input[type="reset"],
+        input[type="button"],
+        input[type="submit"],
+        input[type="checkbox"],
+        input[type="radio"],
         select {
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -209,7 +209,7 @@
         
     /* @group input[type="search"] for Webkit */
         /* !Makes Webkit render the search input like a normal text field */
-        input[type=search] {
+        input[type="search"] {
             -webkit-appearance: textfield;
         }
         
